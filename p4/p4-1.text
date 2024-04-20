@@ -1,0 +1,2 @@
+SELECT MAKEDATE(Year, 1) as date
+FROM infectious_cases ;

@@ -1,0 +1,5 @@
+SELECT country_id, AVG(Number_rabies) AS average_rabies, MIN(Number_rabies) AS minimum_rabies, MAX(Number_rabies) AS maximum_rabies, SUM(Number_rabies) AS sum_rabies
+FROM infectious_cases
+WHERE Number_rabies IS NOT NULL AND Number_rabies != ''
+GROUP BY country_id
+ORDER BY average_rabies+0  DESC;

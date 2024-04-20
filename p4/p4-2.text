@@ -1,0 +1,2 @@
+SELECT MAKEDATE(Year, 1) as date, CURDATE() as `current_date`
+FROM infectious_cases ;

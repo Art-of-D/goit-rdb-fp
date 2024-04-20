@@ -1,0 +1,2 @@
+SELECT MAKEDATE(Year, 1) as date, CURDATE() as `current_date`, YEAR(CURDATE()) - YEAR(MAKEDATE(Year, 1)) AS year_difference
+FROM infectious_cases ;

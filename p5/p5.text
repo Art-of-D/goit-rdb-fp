@@ -1,0 +1,25 @@
+DELIMITER //
+
+CREATE FUNCTION IF NOT EXISTS YearDifference(year_value INT)
+RETURNS INT
+DETERMINISTIC
+BEGIN
+    DECLARE start_of_year DATE;
+    DECLARE current_ymd DATE;
+    DECLARE difference INT;
+
+    SET start_of_year = MAKEDATE(year_value, 1);
+
+    SET current_ymd = CURDATE();
+    
+    SET difference = YEAR(current_ymd) - YEAR(start_of_year);
+
+    RETURN difference;
+END//
+
+DELIMITER ;
+
+
+
+SELECT *, YearDifference(year) AS year_difference
+FROM infectious_cases;
